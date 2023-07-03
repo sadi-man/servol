@@ -68,75 +68,93 @@
 <p>A number of steps that you must follow so that the Install OpenLiteSpeed Ubuntu process runs successfully, do it carefully</p>
 <h3 id="step-1-updating-software-packages">Step 1: Updating Software Packages</h3>
 <p>To ensure that your system has the latest software packages, we need to update them. Run the following command in your terminal:</p>
-<p>sudo apt update &amp;&amp; sudo apt upgrade -y</p>
+<pre><code>sudo apt update &amp;&amp; upgrade -y
+</code></pre>
 <h3 id="step-2-installing-openlitespeed-web-server">Step 2: Installing OpenLiteSpeed Web Server</h3>
 <p>OpenLiteSpeed is a high-performance web server that can handle a large number of concurrent connections. To install it, follow these steps:</p>
 <p>Adding the OpenLiteSpeed Repository
 First, we need to add the OpenLiteSpeed repository to our system. Run the following command:</p>
-<p>wget -O - <a href="http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh">http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh</a> | sudo bash</p>
+<pre><code>wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
+</code></pre>
 <p>Installing OpenLiteSpeed</p>
 <p>Once the repository is added, we can proceed with the installation. Run the following command:</p>
-<p>sudo apt install -y openlitespeed</p>
+<pre><code>sudo apt install -y openlitespeed
+</code></pre>
 <p>Starting OpenLiteSpeed</p>
 <p>To start the OpenLiteSpeed service, run the following commands:</p>
-<p>sudo systemctl enable lshttpd
-sudo systemctl start lshttpd</p>
+<pre><code>sudo systemctl enable lshttpd
+sudo systemctl start lshttpd
+</code></pre>
 <p>Checking the Status</p>
 <p>You can verify the status of OpenLiteSpeed by running the following command:</p>
-<p>sudo systemctl status lshttpd</p>
+<pre><code>sudo systemctl status lshttpd
+</code></pre>
 <p>Configuring the Listener</p>
 <p>Next, we need to configure the listener to use port 80 instead of the default port 8088. Follow these steps:</p>
 <p>Open the configuration file in the nano text editor:</p>
-<p>sudo nano /usr/local/lsws/conf/httpd_config.conf</p>
+<pre><code>sudo nano /usr/local/lsws/conf/httpd_config.conf
+</code></pre>
 <p>Locate the following lines:</p>
-<p>listener Default{
-address                  *:8088
-secure                   0
-map                      Example *
-}</p>
+<pre><code>listener Default{
+    address *:8088
+    secure 0
+    map Example *
+}
+</code></pre>
 <p>Change the port number from 8088 to 80:</p>
-<p>listener Default{
-address                  *:80
-secure                   0
-map                      Example *
-}</p>
+<pre><code>listener Default{
+    address *:80
+    secure 0
+    map Example *
+}
+</code></pre>
 <p>Save and close the file by pressing Ctrl + X, followed by Y, and then Enter.</p>
 <p>Restart OpenLiteSpeed for the changes to take effect:</p>
-<p>sudo systemctl restart lshttpd</p>
+<pre><code>sudo systemctl restart lshttpd
+</code></pre>
 <h3 id="step-3-installing-mariadb-database-server">Step 3: Installing MariaDB Database Server</h3>
 <p>MariaDB is a popular open-source relational database management system. Follow these steps to install it:</p>
-<p>sudo apt install mariadb-server mariadb-client</p>
+<pre><code>sudo apt install mariadb-server mariadb-client
+</code></pre>
 <p>Starting and Enabling MariaDB</p>
 <p>To start the MariaDB service and enable it to start on system boot, run the following commands:</p>
-<p>sudo systemctl start mariadb
-sudo systemctl enable mariadb</p>
+<pre><code>sudo systemctl start mariadb
+sudo systemctl enable mariadb
+</code></pre>
 <p>Securing MariaDB</p>
 <p>To improve the security of your MariaDB installation, you should run the security script and follow the prompts:</p>
-<p>sudo mysql_secure_installation</p>
+<pre><code>sudo mysql_secure_installation
+</code></pre>
 <h3 id="step-4-installing-php80">Step 4: Installing PHP8.0</h3>
 <p>PHP is a widely used scripting language for web development. Install PHP8.0 along with necessary modules by executing the following command:</p>
-<p>sudo apt install lsphp80 lsphp80-mysql lsphp80-common lsphp80-opcache lsphp80-curl</p>
+<pre><code>sudo apt install lsphp80 lsphp80-mysql lsphp80-common lsphp80-opcache lsphp80-curl
+</code></pre>
 <p>Checking PHP Version</p>
 <p>You can check the installed PHP version by running the following command:</p>
-<p>/usr/local/lsws/lsphp80/bin/php8.0 -v</p>
+<pre><code>/usr/local/lsws/lsphp80/bin/php8.0 -v
+</code></pre>
 <p>Checking Installed PHP Modules</p>
 <p>To view the list of installed PHP modules, use the following command:</p>
-<p>/usr/local/lsws/lsphp80/bin/php8.0 &ndash;modules</p>
+<pre><code>/usr/local/lsws/lsphp80/bin/php8.0 --modules
+</code></pre>
 <h3 id="step-5-testing-php">Step 5: Testing PHP</h3>
 <p>To ensure that PHP is working correctly with OpenLiteSpeed, you can create a test file. Follow these steps:</p>
 <p>Create a new file called info.php in the web server&rsquo;s document root directory:</p>
-<p>sudo nano /var/www/html/info.php</p>
+<pre><code>sudo nano /var/www/html/info.php
+</code></pre>
 <p>Add the following line to the file:</p>
-<!-- raw HTML omitted -->
+<pre><code>&lt;?php phpinfo(); ?&gt;
+</code></pre>
 <p>Save and close the file.</p>
 <p>Open your web browser and navigate to http://your_server_ip/info.php. You should see the PHP information page if everything is set up correctly.</p>
 <h3 id="step-6-configuring-the-openlitespeed-admin-panel">Step 6: Configuring the OpenLiteSpeed Admin Panel</h3>
 <p>To configure the OpenLiteSpeed admin panel, follow these steps:</p>
 <p>Set a username and password for the admin panel by running the following command:</p>
-<p>sudo /usr/local/lsws/admin/misc/admpass.sh</p>
+<pre><code>sudo /usr/local/lsws/admin/misc/admpass.sh
+</code></pre>
 <p>Access the admin panel by visiting https://your_server_ip:7080/login.php in your web browser.</p>
 <p>Enter the following information:</p>
-<p>Name: lsphp8.0
+<pre><code>Name: lsphp8.0
 Address: uds://tmp/lshttpd/lsphp80.sock
 Max Connections: 10
 Environment: PHP_LSAPI_CHILDREN=10
@@ -152,16 +170,19 @@ Priority: 0
 Memory Soft Limit (bytes): 2047M
 Memory Hard Limit (bytes): 2047M
 Process Soft Limit: 1400
-Process Hard Limit: 1500</p>
+Process Hard Limit: 1500
+</code></pre>
 <p>Save the settings.</p>
 <p>Openlistspeed script handler</p>
-<p>Suffixes: php
+<pre><code>Suffixes: php
 Handler Type: LiteSpeed SAPI
 Handler Name: lsphp8.0
-openlitespeed script handler php8.0</p>
+openlitespeed script handler php8.0
+</code></pre>
 <p>openlitespeed multiple PHP versions</p>
-<p>cat /etc/php/7.4/mods-available/* | sudo tee -a /etc/php/7.4/fpm/php.ini
-cat /etc/php/7.4/mods-available/* | sudo tee -a /etc/php/7.4/cli/php.ini</p>
+<pre><code>cat /etc/php/7.4/mods-available/* | sudo tee -a /etc/php/7.4/fpm/php.ini
+cat /etc/php/7.4/mods-available/* | sudo tee -a /etc/php/7.4/cli/php.ini
+</code></pre>
 <p>Conclusion</p>
 <p>Congratulations! You have successfully installed OpenLiteSpeed, MariaDB, and PHP8.0 on your Ubuntu 20.04 system. This powerful web server stack will enable you to host and serve websites and applications efficiently. Enjoy your optimized web hosting environment!</p>
 <p>Source: <a href="https://kumiskiri.com/cara-install-openlitespeed-ubuntu/">https://kumiskiri.com/cara-install-openlitespeed-ubuntu/</a></p>
@@ -181,7 +202,7 @@ cat /etc/php/7.4/mods-available/* | sudo tee -a /etc/php/7.4/cli/php.ini</p>
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-07-03 19:58:57.0321848 &#43;0700 &#43;07 m=&#43;0.295453001">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-07-03 21:17:05.97358 &#43;0700 &#43;07 m=&#43;0.196455401">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
