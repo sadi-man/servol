@@ -1,0 +1,4 @@
+baseURL = "https://servol.vercel.app/"
+languageCode = "en-us"
+title = "Servol"
+theme = "tale"

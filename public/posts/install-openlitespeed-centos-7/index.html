@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+<meta name="google-site-verification" content="vpt628XZTdosaqRzZKXYXowbR7W4fFReu6mDqwCFfAc" />
+		
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="Install OpenLiteSpeed on CentOS 7 and Ubuntu with Our 11-Step Guide. Unlock Lightning-Fast Speeds Today!">
+
+		<title>Install OpenLiteSpeed CentOS 7 And Ubuntu: A 11 Step Guide &middot; Servol</title>
+
+		
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		
+		<link rel="icon" href="/favicon.ico"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Servol" />
+
+		<script src="/js/darkmode.js"></script>
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					
+						<h2 class="nav-title">Servol</h2>
+					
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        <div id="darkModeToggle" onclick="toggleDarkMode()">
+  &#9680; 
+</div>
+
+        
+
+<main>
+	
+
+
+        <div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2023-06-03 00:00:00 &#43;0000 UTC">June 3, 2023</time>
+</div>
+
+		<h1 class="post-title">Install OpenLiteSpeed CentOS 7 And Ubuntu: A 11 Step Guide</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>OpenLiteSpeed is a high-performance web server that can greatly enhance the speed and efficiency of your website. In this guide, we will walk you through the process of <a href="https://kumiskiri.com/cara-install-openlitespeed-ubuntu/">installing OpenLiteSpeed</a> CentOS 7 and Ubuntu. By following these steps, you&rsquo;ll be able to set up and configure OpenLiteSpeed to optimize the performance of your website.</p>
+<h2 id="install-openlitespeed-centos-7-and-ubuntu">Install OpenLiteSpeed CentOS 7 And Ubuntu</h2>
+<p>a number of steps that you must follow so that the openlitespeed installation process runs successfully, do it carefully</p>
+<h3 id="step-1-setting-up-the-repository">Step 1: Setting up the Repository</h3>
+<p>To begin the installation process, you need to set up the OpenLiteSpeed repository. Execute the following command to add the repository:</p>
+<p>rpm -ivh <a href="http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el7.noarch.rpm">http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el7.noarch.rpm</a></p>
+<h3 id="step-2-installing-dependencies">Step 2: Installing Dependencies</h3>
+<p>Next, you need to install the necessary dependencies for OpenLiteSpeed. Run the following commands:</p>
+<p>yum install epel-release
+yum install openlitespeed</p>
+<h3 id="step-3-installing-php-and-extensions">Step 3: Installing PHP and Extensions</h3>
+<p>To enable PHP support, you need to install PHP and its extensions. Use the following command:</p>
+<p>yum install lsphp74 lsphp74-json lsphp74-xmlrpc lsphp74-xml lsphp74-tidy lsphp74-soap lsphp74-snmp lsphp74-pspell lsphp74-process lsphp74-pgsql lsphp74-pear lsphp74-pdo lsphp74-opcache lsphp74-odbc lsphp74-mysqlnd lsphp74-mcrypt lsphp74-mbstring lsphp74-ldap lsphp74-intl lsphp74-imap lsphp74-gmp lsphp74-gd lsphp74-enchant lsphp74-dba lsphp74-common lsphp74-bcmath lsphp74-memcached lsphp74-redis</p>
+<h3 id="step-4-configuring-openlitespeed-for-centos-7">Step 4: Configuring OpenLiteSpeed for CentOS 7</h3>
+<p>Now that you have installed OpenLiteSpeed and PHP, it&rsquo;s time to configure them. Follow these steps:</p>
+<p>Run the following command to download the necessary script:</p>
+<p>wget -O - <a href="http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh">http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh</a> | bash</p>
+<p>Install OpenLiteSpeed using the command:</p>
+<p>apt install openlitespeed</p>
+<p>Install PHP and its extensions by executing the following command:</p>
+<p>apt install lsphp74 lsphp74-common lsphp74-curl lsphp74-dev lsphp74-imap lsphp74-intl lsphp74-json lsphp74-ldap lsphp74-mysql lsphp74-opcache lsphp74-pspell lsphp74-memcached lsphp74-redis lsphp74-sqlite3 lsphp74-tidy</p>
+<h3 id="step-5-creating-user-and-directory">Step 5: Creating User and Directory</h3>
+<p>To ensure proper ownership and permissions, create a user and directory for your domain. Use the following commands as a guide:</p>
+<p>groupadd group-name
+useradd -M -g group-name user-name
+mkdir /home/domain.com
+mkdir /home/domain.com/public_html
+chown user-name:group-name /home/domain.com
+chmod 711 /home/domain.com
+chown user-name:nobody /home/domain.com/public_html
+chmod 750 /home/domain.com/public_html</p>
+<h3 id="step-6-testing-the-configuration">Step 6: Testing the Configuration</h3>
+<p>To verify that everything is set up correctly, you can create a test page. Run the following commands:</p>
+<p>touch /home/domain.com/public_html/.htaccess
+chown -R user-name:group-name /home/domain.com/public_html/.htaccess
+echo &ldquo;&lt;?php phpinfo();&rdquo; &gt; /home/domain.com/public_html/info.php
+echo &ldquo;hello world&rdquo; &gt; /home/domain.com/public_html/index.html
+chown -R user-name:group-name /home/domain.com/public_html/*</p>
+<h3 id="step-7-starting-openlitespeed">Step 7: Starting OpenLiteSpeed</h3>
+<p>To start OpenLiteSpeed, use the following command:</p>
+<p>systemctl start lsws</p>
+<h3 id="step-8-configuring-webadmin-console">Step 8: Configuring WebAdmin Console</h3>
+<p>To access the OpenLiteSpeed web-based administration console, you need to set up the login credentials. Execute the following command:</p>
+<p>/usr/local/lsws/admin/misc/admpass.sh</p>
+<p>You can now log in to the webadmin console using the URL https://your_server_ip:7080. Make sure that port 7080 is not blocked by your firewall.</p>
+<h3 id="step-9-optimizing-openlitespeed-performance">Step 9: Optimizing OpenLiteSpeed Performance</h3>
+<p>To optimize the performance of OpenLiteSpeed, you can make a few adjustments in the server configuration. Follow these steps:</p>
+<p>Open the webadmin console and navigate to Configuration &gt; Listeners.</p>
+<p>Locate the listener for your domain and click on it.</p>
+<p>Adjust the following settings:</p>
+<p>Address: uds://tmp/lshttpd/domain.sock
+Max Connections: 10
+Environment: PHP_LSAPI_CHILDREN=10
+Command: /usr/local/lsws/lsphp74/bin/lsphp
+Run As User: user-name
+Run As Group: group-name</p>
+<p>Note: If your website requires more PHP processes, you can gradually increase the values of Max Connections and PHP_LSAPI_CHILDREN.</p>
+<h3 id="step-10-setting-up-ssltls-certificates">Step 10: Setting Up SSL/TLS Certificates</h3>
+<p>To secure your website with an SSL/TLS certificate, you can use acme.sh to obtain and install Let&rsquo;s Encrypt certificates. Execute the following commands:</p>
+<p>curl <a href="https://get.acme.sh">https://get.acme.sh</a> | sh
+domain=&ldquo;domain.com&rdquo;; /root/.acme.sh/acme.sh &ndash;issue -d &ldquo;$domain&rdquo; -d www.&quot;$domain&quot; -w /home/&quot;$domain&quot;/public_html
+Make sure to replace domain.com with your actual domain. If you don&rsquo;t use the www subdomain, you can remove the -d www.&quot;$domain&quot; part.</p>
+<h3 id="step-11-enforcing-https-redirection">Step 11: Enforcing HTTPS Redirection</h3>
+<p>To force HTTPS redirection for your website, you can add a rewrite rule to your previously created .htaccess file. Edit the file and add the following lines:</p>
+<p>RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+Make sure to restart OpenLiteSpeed for the changes to take effect.</p>
+<p>Congratulations! You have successfully installed and configured OpenLiteSpeed on CentOS 7. Your website should now benefit from improved performance and security.</p>
+<p>Source: <a href="https://kumiskiri.com/cara-install-openlitespeed-ubuntu/">Cara Install Openlitespeed</a></p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/how-to-install-nginx/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2023-07-03 19:58:57.0126498 &#43;0700 &#43;07 m=&#43;0.275918001">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

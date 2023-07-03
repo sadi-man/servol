@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://servol.vercel.app/posts/install-openlitespeed-ubuntu/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/categories/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/posts/how-to-install-nginx/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/categories/nginx/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/categories/openlitespeed/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/posts/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/</loc>
+    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/posts/install-openlitespeed-centos-7/</loc>
+    <lastmod>2023-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://servol.vercel.app/tags/</loc>
+  </url>
+</urlset>

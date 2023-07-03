@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Servol</title>
+    <link>https://servol.vercel.app/posts/</link>
+    <description>Recent content in Posts on Servol</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://servol.vercel.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6 Step Install OpenLiteSpeed, MariaDB, PHP8.0 on Ubuntu 20.04</title>
+      <link>https://servol.vercel.app/posts/install-openlitespeed-ubuntu/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://servol.vercel.app/posts/install-openlitespeed-ubuntu/</guid>
+      <description>If you&amp;rsquo;re looking to set up a powerful web server environment on your Ubuntu 20.04 system, this guide will walk you through the process of install OpenLiteSpeed, MariaDB, and PHP8.0. These components will provide you with a reliable and efficient platform to host your websites and applications. Let&amp;rsquo;s get started!
+Install OpenLiteSpeed Ubuntu A number of steps that you must follow so that the Install OpenLiteSpeed Ubuntu process runs successfully, do it carefully</description>
+    </item>
+    
+    <item>
+      <title>How to Install Nginx Ubuntu 20.04 Server and Desktop: 6 Step Easy</title>
+      <link>https://servol.vercel.app/posts/how-to-install-nginx/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://servol.vercel.app/posts/how-to-install-nginx/</guid>
+      <description>Are you looking to install Nginx Ubuntu 20.04 server and desktop? In this comprehensive guide, we will walk you through the step-by-step process of installing Nginx on both your server and desktop environments. Nginx is a popular web server that offers high performance and scalability, making it a great choice for hosting websites and applications. By following this tutorial, you will have Nginx up and running in no time, ready to serve your web content efficiently.</description>
+    </item>
+    
+    <item>
+      <title>Install OpenLiteSpeed CentOS 7 And Ubuntu: A 11 Step Guide</title>
+      <link>https://servol.vercel.app/posts/install-openlitespeed-centos-7/</link>
+      <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://servol.vercel.app/posts/install-openlitespeed-centos-7/</guid>
+      <description>OpenLiteSpeed is a high-performance web server that can greatly enhance the speed and efficiency of your website. In this guide, we will walk you through the process of installing OpenLiteSpeed CentOS 7 and Ubuntu. By following these steps, you&amp;rsquo;ll be able to set up and configure OpenLiteSpeed to optimize the performance of your website.
+Install OpenLiteSpeed CentOS 7 And Ubuntu a number of steps that you must follow so that the openlitespeed installation process runs successfully, do it carefully</description>
+    </item>
+    
+  </channel>
+</rss>
